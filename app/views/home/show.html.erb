@@ -7,5 +7,11 @@
 <div class="container">
   <%= image_tag("3-floor.png", style:"height: calc(100vh - 64px)") %>
   <a class="btn-floating btn-large waves-effect waves-light red" style="position: fixed; top: 30vh; right: 30vw"></a>
-  <a class="btn-floating btn-large waves-effect waves-light blue" style="position: fixed; top: 15vh; left: 30vw; width: <%= @toilet %>px; height: <%= @toilet %>px"></a>
+  <% if @toilet < 200 %>
+  <% @color = "green" %>
+  <% end %>
+  <% if @toilet >= 200 %>
+  <% @color = "red" %>
+  <% end %>
+  <a class="btn-floating btn-large waves-effect waves-light <%= @color %>" style="position: fixed; top: 15vh; left: 30vw; width: <%= @toilet %>px; height: <%= @toilet %>px"></a>
 </div>
