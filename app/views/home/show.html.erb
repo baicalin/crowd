@@ -5,13 +5,13 @@
 </nav>
 
 <div class="container">
-  <%= image_tag("3-floor.png", style:"height: calc(100vh - 64px)") %>
-  <a class="btn-floating btn-large waves-effect waves-light red" style="position: fixed; top: 30vh; right: 30vw"></a>
-  <% if @toilet < 200 %>
+  <%= image_tag("3-floor.png", style:"height: calc(100vh - 64px)", class:"responsive-img") %>
+  <a class="btn-floating btn-large waves-effect waves-light red" style="position: absolute; top: 30vh; right: 40vw;  width: 5vh; height: 5vh"></a>
+  <% if @toilet < 20 %>
   <% @color = "green" %>
   <% end %>
-  <% if @toilet >= 200 %>
+  <% if @toilet >= 20 %>
   <% @color = "red" %>
   <% end %>
-  <a class="btn-floating btn-large waves-effect waves-light <%= @color %>" style="position: fixed; top: 15vh; left: 30vw; width: <%= @toilet %>px; height: <%= @toilet %>px"></a>
+  <a class="btn-floating btn-large waves-effect waves-light <%= @color %>" style="position: absolute; top: 15vh; left: 30vw; width: <%= @toilet %>vh; height: <%= @toilet %>vh"></a>
 </div>
